@@ -21,21 +21,15 @@ print(device)
 fold = 4
 patch_num = 60
 patch_size = 32
-# Dataset/ADNC/test_4.csv
-image_test = "Dataset/ADNC/test_{}.csv".format(fold)
-image_train = "Dataset/ADNC/train_{}.csv".format(fold)
+image_test = ./ADNC/test_{}.csv".format(fold)
+image_train = ./ADNC/train_{}.csv".format(fold)
 task = "ADNC"
 # image_test = "/home/disk1/zhouqinyi/PycharmProjects/originvit/datasplit/exp1/exp1test.csv"
-root = "/home/disk1/zhouqinyi/SMALLDATASET/ADNC"
+root = "./ADNC"
 
 test_images_path, test_images_label = read_split_data_tvt_5cv_test(image_test, root)
-model_path = "weights/Large_loc_ADNC_fold_{}best_60.pth".format(fold)
-# model_path = "BESTMODEL/ADNC/TR3DSC_32_ADNC_fold_4best.pth"#"weights/TR3D_ADNC_fold_{}best.pth".format(fold)
-# BESTMODEL/ADNC/TR3DSC_32_1_ADNC_fold_0best.pth-->87.5
-# BESTMODEL/ADNC/TR3DSC_32_3_ADNC_fold_1best.pth-->91.41
-# BESTMODEL/ADNC/TR3DSC_32_2_ADNC_fold_2best.pth-->93.75
-# BESTMODEL/ADNC/TR3DSC_32_ADNC_fold_3best.pth-->94.53
-# BESTMODEL/ADNC/TR3DSC_32_ADNC_fold_4best.pth-->90.62
+model_path = "./.pth".format(fold)
+
 model = create_model(embed_dim=96, slice_num=60,
                      num_classes=2,depth=4,num_heads=8,
                      mlp_ratio=2,drop_ratio=0.5,
